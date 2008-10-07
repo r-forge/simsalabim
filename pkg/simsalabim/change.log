@@ -1,0 +1,14 @@
+22.08.2008:
+The output of decompSSAM has now the class
+"decompSSAM" "decompSSA". (inherits "decompSSA")
+
+24.08.2008
+getSignal added
+
+26.08.2008
+Bug fixed in get signal
+
+03.10.2008
+Bug fixed in .periodogram
+
+

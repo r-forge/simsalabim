@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HEAD></HEAD><HTML><BODY>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Package simsalabim:  Contents">
+<param name="Local" value="00Index.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Package simsalabim:  R objects">
+</OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="simsalabim-package">
+<param name="Local" value="simsalabim-package.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="CV.kgSSAM">
+<param name="Local" value="kgSSAM.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="decompSSA">
+<param name="Local" value="decompSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="decompSSAM">
+<param name="Local" value="decompSSAM.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="getPeriod">
+<param name="Local" value="getSSAsignal.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="getSignal">
+<param name="Local" value="getSSAsignal.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="getSignal.decompSSA">
+<param name="Local" value="getSSAsignal.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="getTrend">
+<param name="Local" value="getSSAsignal.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="kgSSAM">
+<param name="Local" value="kgSSAM.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="MCSSA">
+<param name="Local" value="MCSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="MCSSA.decompSSA">
+<param name="Local" value="MCSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="phaSyn">
+<param name="Local" value="phaSyn.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="phaSynMat">
+<param name="Local" value="phaSyn.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="plot.decompSSA">
+<param name="Local" value="plot.decompSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="plot.decompSSAM">
+<param name="Local" value="plot.decompSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="plot.MCSSA">
+<param name="Local" value="plot.MCSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="plot.sdTest">
+<param name="Local" value="plot.sdTest.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="reconSSA">
+<param name="Local" value="decompSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="reconSSAM">
+<param name="Local" value="decompSSAM.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="sdTest">
+<param name="Local" value="sdTest.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="sdTest.decompSSA">
+<param name="Local" value="sdTest.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="sdTest.decompSSAM">
+<param name="Local" value="sdTest.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="ssaps">
+<param name="Local" value="simsalabim-package.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="synBoot">
+<param name="Local" value="synBoot.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="w.cor">
+<param name="Local" value="w.cor.html">
+</OBJECT>
+</UL>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Package simsalabim:  Titles">
+</OBJECT>
+<UL>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="A collection of methods for time series analysis and signal detection. ">
+<param name="Local" value="simsalabim-package.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Itterative filling in of missing values in time series, based on SSA">
+<param name="Local" value="kgSSAM.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Monte Carlo SSA (MCSSA)">
+<param name="Local" value="MCSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Parametric method for identifying trends and periodic components   in SSA decompositions. ">
+<param name="Local" value="getSSAsignal.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Permutation test for phase synchronisation indices ">
+<param name="Local" value="synBoot.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Phase Synchronisation Analysis">
+<param name="Local" value="phaSyn.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Plot Monte Carlo SSA ">
+<param name="Local" value="plot.MCSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Plot the SSA eigenspectrum ">
+<param name="Local" value="plot.decompSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Plots the results of the Shun and Duffy (1999) significance test.">
+<param name="Local" value="plot.sdTest.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Singular Spectrum Analysis ">
+<param name="Local" value="decompSSA.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Singular System Analysis for time series with missing values">
+<param name="Local" value="decompSSAM.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="Test SSA eigenspectrum against red noise ">
+<param name="Local" value="sdTest.html">
+</OBJECT>
+<LI> <OBJECT type="text/sitemap">
+<param name="Name" value="w - correlation">
+<param name="Local" value="w.cor.html">
+</OBJECT>
+</UL>
+</UL>
+</BODY></HTML>

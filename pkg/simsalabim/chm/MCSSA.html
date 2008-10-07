@@ -1,0 +1,180 @@
+<html><head><title>Monte Carlo SSA (MCSSA)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>MCSSA(simsalabim)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   MCSSA">
+<param name="keyword" value="R:   MCSSA.decompSSA">
+<param name="keyword" value=" Monte Carlo SSA (MCSSA)">
+</object>
+
+
+<h2>Monte Carlo SSA (MCSSA)</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Simple implementation of MCSSA
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+MCSSA(dSSA, ...)
+## S3 method for class 'decompSSA':
+MCSSA(dSSA, x, n, conf = 0.95,
+      keepSurr = FALSE,ar.method="mle", ...)
+
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dSSA</code></td>
+<td>
+Object of class <code><a href="decompSSA.html">decompSSA</a></code>.</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+A numeric vector, interpreted as time series.</td></tr>
+<tr valign="top"><td><code>n</code></td>
+<td>
+Number of surrogates to be computed. </td></tr>
+<tr valign="top"><td><code>conf</code></td>
+<td>
+Confidence limit.</td></tr>
+<tr valign="top"><td><code>keepSurr</code></td>
+<td>
+Whether to keep the surrogate estimates of lambda or
+not.</td></tr>
+<tr valign="top"><td><code>ar.method</code></td>
+<td>
+Method to estimate AR1 parameters, passed on to
+<code><a onclick="findlink('stats', 'ar.html')" style="text-decoration: underline; color: blue; cursor: hand">ar</a></code>. One of <code>"yule-walker"</code>, <code>"burg"</code>,
+<code>"ols"</code>, <code>"mle"</code>, <code>"yw"</code>. </td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+Arguments passed to methods.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+A simple implementation of the MCSSA, testing against the AR1 hypothesis.
+The parameters of the AR1 process are estimated via <code><a onclick="findlink('stats', 'ar.html')" style="text-decoration: underline; color: blue; cursor: hand">ar</a></code> .
+</p>
+<p>
+The confidence level <code>conf</code> can be specified either as number &lt; 1 or
+as vector of length two with <code>sum(conf)==1</code>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+An object of class <EM>MCSSA</EM>
+</p>
+<table summary="R argblock">
+<tr valign="top"><td><code>lambda </code></td>
+<td>
+The eigenvalues, ordered by decreasing frequency.</td></tr>
+<tr valign="top"><td><code>freq </code></td>
+<td>
+Dominant frequency of the eigenvectors, ordered by
+decreasing value.</td></tr>
+<tr valign="top"><td><code>rank </code></td>
+<td>
+Rank of the eigenvalues, ordered by decreasing
+frequency.</td></tr>
+<tr valign="top"><td><code>ar1 </code></td>
+<td>
+The noise model, output of <code><a onclick="findlink('stats', 'ar.html')" style="text-decoration: underline; color: blue; cursor: hand">ar.mle</a></code></td></tr>
+<tr valign="top"><td><code>upper </code></td>
+<td>
+Upper confidence limit, ordered by decreasing
+frequency.</td></tr>
+<tr valign="top"><td><code>lower </code></td>
+<td>
+Lower confidence limit, ordered by decreasing
+frequency.</td></tr>
+<tr valign="top"><td><code>conf </code></td>
+<td>
+Vector of length two, specifying the upper and lower
+confidence bounds of the test.</td></tr>
+<tr valign="top"><td><code>N </code></td>
+<td>
+Length of the initial series.</td></tr>
+<tr valign="top"><td><code>L </code></td>
+<td>
+The embedding dimension.</td></tr>
+<tr valign="top"><td><code>call </code></td>
+<td>
+Call of the generating function.</td></tr>
+<tr valign="top"><td><code>surLambda</code></td>
+<td>
+A matrix containing the estimates of the surrogate
+eigenvalues, ordered by the dominant frequency in its columns.
+Only available if <code>keepSurr=TRUE</code>.</td></tr>
+</table>
+
+<h3>Warning</h3>
+
+<p>
+Large computational demands
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>
+Lukas Gudmundsson
+</p>
+
+
+<h3>References</h3>
+
+<p>
+Allen, M. &amp; Smith, L. Monte Carlo SSA: Detecting irregular
+oscillations in the Presence of Colored Noise. Journal of Climate,
+1996, 9, 3373-3404
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="sdTest.html">sdTest</a></code>, <code><a href="decompSSA.html">decompSSA</a></code>,
+<code><a href="plot.MCSSA.html">plot.MCSSA</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+n &lt;- arima.sim(n=200,alist(ar=0.4))
+n &lt;- as.vector(scale(n))
+x &lt;- sin(seq(0,15*pi,len=200))
+xn &lt;- x+n/2
+xn.dc &lt;- decompSSA(xn,L=40)
+xn.mct &lt;- MCSSA(xn.dc,xn,n=50)
+plot(xn.mct)
+</pre>
+
+<script Language="JScript">
+function findlink(pkg, fn) {
+var Y, link;
+Y = location.href.lastIndexOf("\\") + 1;
+link = location.href.substring(0, Y);
+link = link + "../../" + pkg + "/chtml/" + pkg + ".chm::/" + fn;
+location.href = link;
+}
+</script>
+
+
+<hr><div align="center">[Package <em>simsalabim</em> version 0.1-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

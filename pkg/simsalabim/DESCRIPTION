@@ -1,0 +1,10 @@
+Package: simsalabim
+Type: Package
+Title: A collection of methods for time series analysis and signal detection.
+Version: 0.1-2
+Date: 2008-08-24
+Author: Lukas Gudmundsson
+Maintainer: Lukas Gudmundsson <lukas.gudmundsson@geo.uio.no>
+Description: This package implements Singular System Analysis and Phase Synchronisation Indices.
+License: GPL-2
+URL: http://simsalabim.r-forge.r-project.org/

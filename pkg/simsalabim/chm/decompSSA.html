@@ -1,0 +1,232 @@
+<html><head><title>Singular Spectrum Analysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>decompSSA(simsalabim)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   decompSSA">
+<param name="keyword" value="R:   reconSSA">
+<param name="keyword" value=" Singular Spectrum Analysis">
+</object>
+
+
+<h2>Singular Spectrum Analysis</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Performs the two stages of Singular System Analysis (SSA). Decomposition
+and reconstruction.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  decompSSA(x, L, toeplitz = FALSE, getFreq = TRUE)
+  reconSSA(dSSA,x, groups)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+A vector representing the time series.</td></tr>
+<tr valign="top"><td><code>L</code></td>
+<td>
+Embedding dimension also referred to as window length.</td></tr>
+<tr valign="top"><td><code>toeplitz</code></td>
+<td>
+Whether to use the Toeplitz modification of SSA for
+stationary time series or not.</td></tr>
+<tr valign="top"><td><code>getFreq</code></td>
+<td>
+Whether dominat frequencies of the eigenvectors shall
+be determined. </td></tr>
+<tr valign="top"><td><code>dSSA</code></td>
+<td>
+Output of decompSSA. </td></tr>
+<tr valign="top"><td><code>groups</code></td>
+<td>
+A list of vectors. Each vector is representing a
+selection of eigenvalues and eigenvectors which shall be used to
+compute reconstructed components.</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+<code>decompSSA</code> performs the SSA decomposition whereas <code>reconSSA</code>
+performs SSA reconstruction.
+</p>
+<p>
+Singular Spectrum Analysis (SSA) (Golyandina, et.al. 2001) embeds
+lagged copies of a time series <i>x</i> into a augmented (trajectory)
+matrix <i>X</i>. The orthonormal basis of <i>X</i> is  via  singular
+value decomposition (SVD). Having obtained this decomposition, a
+selection  of eigenvectors (or left singular vectors) can be used to
+filter the  time series. SSA has one free parameter, the window length
+<code>L</code> which determines how the time series is embedded. A general
+advice is to choose <code>L</code> close to half of the series length.
+</p>
+<p>
+SVD of an matrix <i>X</i> can be split up into several steps. One of them
+beeing the eigenvalue decomposition of <i>XX^T</i>.
+The product <i>XX^T </i> has simmilarities whith
+the covariance matrix of <i>X</i>. Moreover if <i>X</i> is set to have zero
+mean and <i>XX^T</i> is normalised, it is in fact a covariance matrix.
+In case of SSA <i>XX^T</i> containes the inner product of time lagged
+copies of the time series. The Toeplitz modification of SSA puts
+stationarity assumptions into the computation of <i>XX^T</i>.
+In such a case the secondary diagonals of <i>XX^T</i> only depend on the
+time lag. This can be enforced by giving these entries the values of the
+autocorrelation function at the corresponding lag.
+</p>
+<p>
+It is possible to assign each eigenvector a dominat frequency. This
+is found by applying <code><a onclick="findlink('stats', 'fft.html')" style="text-decoration: underline; color: blue; cursor: hand">fft</a></code> taking the frequency of the largest
+Fourier component.
+</p>
+<p>
+Beside the results of the output of <code>decompSSA</code> and the original
+time series <code>x</code>, <code>reconSSA</code> has a third input called
+groups. This is implemented a list of vectors where each vector should
+contain integers representing the index of the eigenvectors  to be
+used for reconstruction of a sub signal of the initial time
+series. The index corresponds to the index of the decreasing ordered
+eigenvalues (<code>rank</code>).
+</p>
+<p>
+For reasons computational efficiency the sum of several components (represented
+by the single list entries) can be obtained in one step. This procedure is
+recommended if the interest lies on the shape of the entire reconstructed
+signal. However, if the focus of the analysis is to examine the shape of
+single reconstructed components one has to obtain each each reconstructed
+compontent seperately.
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+The output of <code>decompSSA</code> is an object of class <EM>decompSSA</EM>
+with following items:
+</p>
+<table summary="R argblock">
+<tr valign="top"><td><code>lambda </code></td>
+<td>
+The eigenvalues, ordered by decreasing value.</td></tr>
+<tr valign="top"><td><code>U </code></td>
+<td>
+The eigenvectors (columns), ordered by decreasing eigenvalues.</td></tr>
+<tr valign="top"><td><code>freq </code></td>
+<td>
+Dominant frequency of the eigenvectors,
+ordered by decreasing eigenvalues.</td></tr>
+<tr valign="top"><td><code>rank </code></td>
+<td>
+Rank of the eigenvalues, ordered by decreasing eigenvalues.</td></tr>
+<tr valign="top"><td><code>N </code></td>
+<td>
+Length of the input series</td></tr>
+<tr valign="top"><td><code>L </code></td>
+<td>
+The embedding dimension</td></tr>
+<tr valign="top"><td><code>toeplitz</code></td>
+<td>
+Logical, indicates if Toeplitz modification has been used.</td></tr>
+<tr valign="top"><td><code>seriesName</code></td>
+<td>
+Name of input series.</td></tr>
+<tr valign="top"><td><code>call </code></td>
+<td>
+Call of the generating function.</td></tr>
+</table>
+<p>
+
+<br>
+The output of <code>reconSSA</code> is a matrix with <code>length(groups)</code> columns
+and <code>length(x)</code> rows. Each column represents the sum of
+the reconstructed components defined by the list entries of <code>groups</code>.</p>
+
+<h3>Warning</h3>
+
+<p>
+May cause extreme memory demands. <code>reconSSA</code> is computational expensive.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>
+Lukas Gudmundsson
+</p>
+
+
+<h3>References</h3>
+
+<p>
+Golyandina, N.; Nekrutkin, V. &amp; Zhiglkilavskifi, A. Analysis of Time Series Structure: SSA and Related Techniques. CRC Press, 2001
+</p>
+<p>
+Ghil, M.; Allen, M.; Dettinger, M.; Ide, K.; Kondrashov, D.; Mann, M.; Robertson, A.; Saunders, A.; Tian, Y.; Varadi, F. &amp; others Advanced spectral methods for climatic time series. Rev. Geophys, 2002, 40, 1003
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="plot.decompSSA.html">plot.decompSSA</a></code>, <code><a href="decompSSAM.html">decompSSAM</a></code>,
+<code><a href="sdTest.html">sdTest</a></code>, <code><a href="MCSSA.html">MCSSA</a></code>, <code><a onclick="findlink('base', 'svd.html')" style="text-decoration: underline; color: blue; cursor: hand">svd</a></code>,
+<code><a onclick="findlink('base', 'eigen.html')" style="text-decoration: underline; color: blue; cursor: hand">eigen</a></code>, <code><a onclick="findlink('stats', 'toeplitz.html')" style="text-decoration: underline; color: blue; cursor: hand">toeplitz</a></code>, <code><a onclick="findlink('stats', 'fft.html')" style="text-decoration: underline; color: blue; cursor: hand">fft</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+x &lt;- sin(seq(0,10*pi,len=200))
+x &lt;- x + rnorm(x)/2
+x.dc &lt;- decompSSA(x,L=40)
+plot(x.dc,by="rank",log="") # the first two elements contain the signal
+pairs(x.dc$U[,1:4])  # the first two elements contain the signal
+
+# Obtaining reconstructed components(RC)
+x.rc1 &lt;- reconSSA(x.dc,x,list(1:2)) # the signal
+x.rc2 &lt;- reconSSA(x.dc,x,list(1:40)) # full reconstruction of the series
+plot(x,type="l")
+lines(x.rc1,col="red",lwd=2)
+points(x.rc2,col="blue")
+
+# Obtaining several RC at once
+# first colum: signal
+# second column: noise
+x.rc3 &lt;- reconSSA(x.dc,x,list(c(1,2),3:40))
+dim(x.rc3)
+matplot(x.rc3,type="l")
+
+# The sum of RC can be obtained in one step.
+# This avoids costly computations that would occure if all
+# RC would be obtained seperately.
+x.rc4 &lt;- reconSSA(x.dc,x,as.list(1:40)) # separate RCs for all eigenvectors
+sum(rowSums(x.rc4)-x.rc2) # identical up to numerical accuracy
+</pre>
+
+<script Language="JScript">
+function findlink(pkg, fn) {
+var Y, link;
+Y = location.href.lastIndexOf("\\") + 1;
+link = location.href.substring(0, Y);
+link = link + "../../" + pkg + "/chtml/" + pkg + ".chm::/" + fn;
+location.href = link;
+}
+</script>
+
+
+<hr><div align="center">[Package <em>simsalabim</em> version 0.1-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

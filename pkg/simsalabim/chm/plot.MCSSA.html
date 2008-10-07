@@ -1,0 +1,124 @@
+<html><head><title>Plot Monte Carlo SSA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>plot.MCSSA(simsalabim)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   plot.MCSSA">
+<param name="keyword" value=" Plot Monte Carlo SSA">
+</object>
+
+
+<h2>Plot Monte Carlo SSA</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Plots SSA - eigenspectrum and draws monte carlo error bars for each
+eigenvalue.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'MCSSA':
+plot(x, by = "freq", normalize = FALSE, asFreq = TRUE,
+      lam.pch = 19, lam.col = "black", lam.cex = 1, sig.col = "red",
+      sig.pch = 19, sig.cex = 1, conf.col = "darkgray", log = "xy",
+      ann = TRUE, legend = TRUE, axes = TRUE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+output of <code><a href="MCSSA.html">MCSSA</a></code>.</td></tr>
+<tr valign="top"><td><code>by</code></td>
+<td>
+How to order the eigenvalues. <code>"freq"</code>: by frequency.
+<code>"rank"</code>: by their rank (decreasingly ordered). </td></tr>
+<tr valign="top"><td><code>normalize</code></td>
+<td>
+Normalise eigenvalues by their sum.</td></tr>
+<tr valign="top"><td><code>asFreq</code></td>
+<td>
+If <code>by="freq"</code>, shall the frequency be expressed as
+&ldquo;frequency&rdquo; or as &ldquo;period&rdquo;.</td></tr>
+<tr valign="top"><td><code>lam.pch</code></td>
+<td>
+<code>pch</code> of the eigenvalues. </td></tr>
+<tr valign="top"><td><code>lam.col</code></td>
+<td>
+<code>col</code> of the eigenvalues. </td></tr>
+<tr valign="top"><td><code>lam.cex</code></td>
+<td>
+<code>cex</code> of the eigenvalues. </td></tr>
+<tr valign="top"><td><code>sig.col</code></td>
+<td>
+<code>col</code> of the significant eigenvalues. </td></tr>
+<tr valign="top"><td><code>sig.pch</code></td>
+<td>
+<code>pch</code> of the significant eigenvalues. </td></tr>
+<tr valign="top"><td><code>sig.cex</code></td>
+<td>
+<code>cex</code> of the significant eigenvalues. </td></tr>
+<tr valign="top"><td><code>conf.col</code></td>
+<td>
+<code>col</code> of the monte carlo confidence limits.</td></tr>
+<tr valign="top"><td><code>log</code></td>
+<td>
+Use logarithmic axes, usage like <code>log</code> in <code><a onclick="findlink('graphics', 'par.html')" style="text-decoration: underline; color: blue; cursor: hand">par</a></code>.</td></tr>
+<tr valign="top"><td><code>ann</code></td>
+<td>
+Whether to do annotations or not.</td></tr>
+<tr valign="top"><td><code>legend</code></td>
+<td>
+Whether to produce a legend or not. </td></tr>
+<tr valign="top"><td><code>axes</code></td>
+<td>
+Whether to draw axes or not. </td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+Further arguments to be passed to graphical functions. </td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+Eigenvalues larger than the upper bound of the monte carlo confidence limits
+are considered to be not explainable by an AR1 noise process.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>
+Lukas Gudmundsson
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a href="MCSSA.html">MCSSA</a></code>, <code><a onclick="findlink('graphics', 'par.html')" style="text-decoration: underline; color: blue; cursor: hand">par</a></code>
+</p>
+
+<script Language="JScript">
+function findlink(pkg, fn) {
+var Y, link;
+Y = location.href.lastIndexOf("\\") + 1;
+link = location.href.substring(0, Y);
+link = link + "../../" + pkg + "/chtml/" + pkg + ".chm::/" + fn;
+location.href = link;
+}
+</script>
+
+
+<hr><div align="center">[Package <em>simsalabim</em> version 0.1-1 <a href="00Index.html">Index]</a></div>
+
+</body></html>
