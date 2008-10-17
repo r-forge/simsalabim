@@ -12,3 +12,11 @@ Bug fixed in get signal
 Bug fixed in .periodogram
 
 
+16.10.2008
+Bugfixing kgSSAM. 
+Updating/changign CV.kgSSAM. 
+(a) two different cross-validation critieria
+(b) fkt. is now called cvSSA.kgSSAM. Aim is to 
+develop a general cross-validation funktion for 
+SSA -- cvSSA with methods for different SSA classes.
+
