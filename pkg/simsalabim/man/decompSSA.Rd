@@ -27,7 +27,7 @@
 	\code{decompSSA} performs the SSA decomposition whereas \code{reconSSA}
   performs SSA reconstruction.
 
-  Singular Spectrum Analysis (SSA) (Golyandina, et.al. 2001) embeds
+  Singular Spectrum Analysis (SSA) embeds
   lagged copies of a time series \eqn{x} into a augmented (trajectory)
   matrix \eqn{X}. The orthonormal basis of \eqn{X} is  via  singular
   value decomposition (SVD). Having obtained this decomposition, a
@@ -87,10 +87,16 @@
 
 }
 \references{
-Golyandina, N.; Nekrutkin, V. & Zhiglkilavskifi, A. Analysis of Time Series Structure: SSA and Related Techniques. CRC Press, 2001
-
-Ghil, M.; Allen, M.; Dettinger, M.; Ide, K.; Kondrashov, D.; Mann, M.; Robertson, A.; Saunders, A.; Tian, Y.; Varadi, F. & others Advanced spectral methods for climatic time series. Rev. Geophys, 2002, 40, 1003
-
+  
+  Elsner, J. B. & Tsonis, A. A. Singular Spectrum Analysis: A New Tool in
+  Time Series Analysis Springer, 1996 
+  
+  Ghil, M.; Allen, M.; Dettinger, M.; Ide, K.; Kondrashov, D.; Mann, M.;
+  Robertson, A.; Saunders, A.; Tian, Y.; Varadi, F. & others Advanced
+  spectral methods for climatic time series. Rev. Geophys, 2002, 40, 1003 
+  
+  Golyandina, N.; Nekrutkin, V. & Zhiglkilavskifi, A. Analysis of Time
+  Series Structure: SSA and Related Techniques. CRC Press, 2001 
 }
 \author{ Lukas Gudmundsson }
 \section{Warning }{
@@ -98,8 +104,9 @@ Ghil, M.; Allen, M.; Dettinger, M.; Ide, K.; Kondrashov, D.; Mann, M.; Robertson
 }
 
 \seealso{ \code{\link{plot.decompSSA}}, \code{\link{decompSSAM}},
-  \code{\link{sdTest}}, \code{\link{MCSSA}}, \code{\link{svd}},
-  \code{\link{eigen}}, \code{\link{toeplitz}}, \code{\link{fft}}
+  \code{\link{kgSSAM}}, \code{\link{sdTest}}, \code{\link{MCSSA}},
+  \code{\link{svd}}, \code{\link{eigen}}, \code{\link{toeplitz}},
+  \code{\link{fft}}
 }
 
 \examples{

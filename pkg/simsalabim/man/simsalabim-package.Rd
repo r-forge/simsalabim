@@ -1,6 +1,6 @@
 \name{simsalabim-package}
 \alias{simsalabim-package}
-\alias{ssaps}
+\alias{simsalabim}
 \docType{package}
 \title{
 A collection of methods for time series analysis and signal detection.
@@ -26,16 +26,21 @@ Lukas Gudmundsson
 Maintainer: Lukas Gudmundsson \email{lukas.gudmundsson@geo.uio.no}
 }
 \references{
-Golyandina, N.; Nekrutkin, V. & Zhiglkilavskifi, A.
-Analysis of Time Series Structure: SSA and Related Techniques. CRC Press, 2001
+  
+  Elsner, J. B. & Tsonis, A. A. Singular Spectrum Analysis: A New Tool
+  in Time Series Analysis Springer, 1996
+  
+  Ghil, M.; Allen, M.; Dettinger, M.; Ide, K.; Kondrashov, D.; Mann, M.;
+  Robertson, A.; Saunders, A.; Tian, Y.; Varadi, F. & others. Advanced
+  spectral methods for climatic time series. Rev. Geophys, 2002, 40,
+  1003 
 
-Ghil, M.; Allen, M.; Dettinger, M.; Ide, K.; Kondrashov, D.; Mann, M.;
-Robertson, A.; Saunders, A.; Tian, Y.; Varadi, F. & others.
-Advanced spectral methods for climatic time series. Rev. Geophys, 2002, 40, 1003
+  Golyandina, N.; Nekrutkin, V. & Zhiglkilavskifi, A. Analysis of Time
+  Series Structure: SSA and Related Techniques. CRC Press, 2001 
 
-Pikovsky, A.; Rosenblum, M. & Kurths, J.
-Synchronization: A Universal Concept in Nonlinear Sciences.
-(Cambridge Nonlinear Science Series) Cambridge University Press, 2003
+  Pikovsky, A.; Rosenblum, M. & Kurths, J. Synchronization: A Universal
+  Concept in Nonlinear Sciences. (Cambridge Nonlinear Science Series)
+  Cambridge University Press, 2003 
 }
 \keyword{ package }
 \keyword{ ts }
