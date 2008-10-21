@@ -1,0 +1,22 @@
+2008-10-16
+	Bugfixing kgSSAM.
+	Updating/changing CV.kgSSAM.
+	(a) two different cross-validation critieria
+	(b) fkt. is now called cvSSA.kgSSAM. Aim is to develop a general
+	cross-validation function for SSA -- cvSSA with methods for
+	different SSA classes.
+
+2008-10-03
+	Bug fixed in .periodogram()
+
+
+2008-08-26
+	Bug fixed in getSignal()
+
+2008-08-24
+	getSignal() added
+
+2008-08-22
+	The output of decompSSAM has now the class
+	"decompSSAM" "decompSSA". (inherits "decompSSA")
+
